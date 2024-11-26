@@ -1,0 +1,32 @@
+<%- include('../partials/header.ejs')%>
+    <main>
+      <%if(events.length) {%>
+      <div class="container events-container">
+        <div class="events-wrapper">
+          <h1 class="mt-400">Food</h1>
+          <ul class="food-list mt-300">
+            <% let food = events.filter(event => { 
+              return event.category === 'food' %>
+            <%})%>
+            <% food.forEach(event => {%>
+              <li><a href="/events/<%=event.id%>"><%=event.title%></a></li>
+            <%})%>
+          </ul>
+          <h1 class="mt-400">Sports</h1>
+          <ul class="sports-list mt-300">
+            <% let sports = events.filter(event => { 
+              return event.category === 'sports' %>
+            <%})%>
+            <% sports.forEach(event => {%>
+              <li><a href="/events/<%=event.id%>"><%=event.title%></a></li>
+            <%})%>
+          </ul>
+        </div>
+      </div>
+      <% } else {%>
+        <h2 class="container mt-400">
+        <p>There are no events to display.</p>
+        </h2>
+      <%}%>
+    </main>
+<%- include('../partials/footer.ejs')%>

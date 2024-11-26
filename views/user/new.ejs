@@ -1,0 +1,18 @@
+<%- include('../partials/header.ejs')%>
+<main>
+    <div class="container">
+        <h1 class="mt-400">Create an Account</h1>
+        <form class="mb-400 mt-400" action="/users" method="POST">
+            <label class="form-label" for="firstName">First Name</label><br>
+            <input class="form-control" type="text" id="firstName" name="firstName"><br><br>
+            <label class="form-label" for="lastName">Last Name</label><br>
+            <input class="form-control" type="text" id="lastName" name="lastName" required><br><br>
+            <label class="form-label" for="email">Email</label><br>
+            <input class="form-control" type="email" id="email" name="email" required><br><br>
+            <label class="form-label" for="password">Password</label><br>
+            <input class="form-control" type="password" id="password" name="password" required><br><br>
+            <button class="button event-submit-button" >Sign Up</button><br>
+        </form>
+    </div>
+</main>
+<%- include('../partials/footer.ejs')%>
